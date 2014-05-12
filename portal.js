@@ -3085,16 +3085,15 @@ var items = [
 
 items.forEach(function (item) {
     if (item.price < 50) {
-        $('.container').append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">' + item.price + '</div>');
+        $('.main-container').append('<div class="container"></div>')
+        $('.container').last().append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">' + item.price + '</div>');
     }
 })
 
 
 
 
-// items.forEach(function(item) {
-//   $('.container').append('<div style="background: #' + item.Images[0].hex_code + ' " class="box"></div>')
-// });
+
 
 
 
