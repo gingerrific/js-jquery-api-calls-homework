@@ -3086,12 +3086,24 @@ var items = [
 items.forEach(function (item) {
     if (item.price < 50) {
         $('.main-container').append('<div class="container"></div>')
-        $('.container').last().append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">' + item.price + '</div>');
+        $('.container').last().append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">$' + item.price + '</div>');
     }
 })
 
 
+$('.box1').hover(function(){
+  $(this).addClass('hover');
+  $(this).siblings('.box2').addClass('hover');
 
+}
+  ,function() {
+    $(this).removeClass('hover');
+    $(this).siblings('.box2').removeClass('hover');
+  }
+)
+
+
+// $('.box2').addClass('hover');
 
 
 
