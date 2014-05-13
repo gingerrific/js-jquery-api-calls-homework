@@ -3107,7 +3107,7 @@ var getIndex = $('.box2').val(function (index) {
 
 
 $(".box2").hover(function() {
-    $(this).text("Clik to hide")
+    $(this).text("Click to hide")
 },  function() {
     $(this).text(elementItemPrice[getIndex])
     }
@@ -3132,13 +3132,13 @@ $(".box2").hover(function() {
 $(window).scroll(function() {
     var y_scroll_pos = window.pageYOffset;
              
-    if (y_scroll_pos > 250) {
+    if (y_scroll_pos > 150) {
       $("body").children('.header').addClass('new-header')
     }
-    else
-    {
-      $("body").children('.header').removeClass('new-header')
-    }
+    // else
+    // {
+    //   $("body").children('.header').removeClass('new-header')
+    // }
 })
 
 
