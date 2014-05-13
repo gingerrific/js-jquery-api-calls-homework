@@ -3129,6 +3129,17 @@ $(".box2").hover(function() {
 
 
 
+$(window).scroll(function() {
+    var y_scroll_pos = window.pageYOffset;
+             
+    if (y_scroll_pos > 250) {
+      $("body").children('.header').addClass('new-header')
+    }
+    else
+    {
+      $("body").children('.header').removeClass('new-header')
+    }
+})
 
 
 
