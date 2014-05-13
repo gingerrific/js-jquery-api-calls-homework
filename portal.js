@@ -3081,29 +3081,51 @@ var items = [
 //   $('.container').append('<div class="box2">' + a + '</div>')
 // })
 
-
-
-items.forEach(function (item) {
+var elementItemPrice = items.map(function (item, index) {
     if (item.price < 50) {
-        $('.main-container').append('<div class="container"></div>')
-        $('.container').last().append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">$' + item.price + '</div>');
+        return item.price;
     }
 })
 
 
-$('.box1').hover(function(){
-  $(this).addClass('hover');
-  $(this).siblings('.box2').addClass('hover');
+items.forEach(function (item, index) {
+    if (item.price < 50) {
+        $('.main-container').append('<div class="container"></div>')
+        $('.container').last().append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">$' + elementItemPrice[index] + '</div>');
+    }
+})
 
-}
-  ,function() {
-    $(this).removeClass('hover');
-    $(this).siblings('.box2').removeClass('hover');
-  }
+
+$(".container").click(function() {
+  $(this).slideUp();
+})
+
+
+var getIndex = $('.box2').val(function (index) {
+    return(index)
+})
+
+
+$(".box2").hover(function() {
+    $(this).text("Clik to hide")
+},  function() {
+    $(this).text(elementItemPrice[getIndex])
+    }
 )
 
+// $(this).text("Clik to show")
 
-// $('.box2').addClass('hover');
+// How to add the hover on/hover off states through jquery
+// $('.box1').hover(function(){
+//   $(this).addClass('hover');
+//   $(this).siblings('.box2').addClass('hover');
+
+// }
+//   ,function() {
+//     $(this).removeClass('hover');
+//     $(this).siblings('.box2').removeClass('hover');
+//   }
+// )
 
 
 
