@@ -3090,8 +3090,8 @@ var elementItemPrice = items.map(function (item, index) {
 
 items.forEach(function (item, index) {
     if (item.price < 50) {
-        $('.main-container').append('<div class="container"></div>')
-        $('.container').last().append('<div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')">', '<div class="box2">$' + elementItemPrice[index] + '</div>');
+        $('.main-container').append('<div class="container"></div></a>')
+        $('.container').last().append('<a href="'+item.url+'"><div class="box1" style="background-image: url(' + item.Images[0].url_170x135 + ')"></a>', '<div class="box2">$' + elementItemPrice[index] + '</div>');
     }
 })
 
@@ -3101,17 +3101,9 @@ $(".container").click(function() {
 })
 
 
-var getIndex = $('.box2').val(function (index) {
-    return(index)
-})
 
 
-$(".box2").hover(function() {
-    $(this).text("Click to hide")
-},  function() {
-    $(this).text(elementItemPrice[getIndex])
-    }
-)
+
 
 // $(this).text("Clik to show")
 
@@ -3135,10 +3127,10 @@ $(window).scroll(function() {
     if (y_scroll_pos > 150) {
       $("body").children('.header').addClass('new-header')
     }
-    // else
-    // {
-    //   $("body").children('.header').removeClass('new-header')
-    // }
+    else
+    {
+      $("body").children('.header').removeClass('new-header')
+    }
 })
 
 
